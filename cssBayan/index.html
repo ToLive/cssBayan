@@ -1,0 +1,91 @@
+<!DOCTYPE html lang="en">
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+<style>
+    .memo-button {
+        display: none;
+    }
+
+    .container {
+        max-width: 80vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meme-containter {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 0.2em solid;
+    }
+
+    .btn {
+        height: 2em;
+        display: block;
+        text-align: left;
+        font-size: 2em;
+        line-height: 2em;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+
+    .btn:active {
+        /*margin-left: 1px 1px 0;*/
+    }
+
+    .memo-button:checked+label {
+        height: 10em;
+    }
+
+    .toggle-button {
+        justify-content: center;
+        display: flex;
+        font-size: 3.5em;
+        width: 1em;
+        height: 1em;
+        transition: transform 0.1s linear;
+        /*transform-origin: 100% 0%;*/
+    }
+
+    .memo-button:checked~.toggle-button {
+        transform: rotate(45deg);
+    }
+</style>
+
+<body>
+
+    <h1>CSS Bayan</h1>
+    <div class="container">
+        <div class="meme-containter">
+            <input class="memo-button" type="checkbox" id="meme1" />
+            <label class="btn" for="meme1">Click me</label>
+            <span class="toggle-button">+</span>
+        </div>
+        <div class="meme-containter">
+            <input class="memo-button" type="checkbox" id="meme2" />
+            <label class="btn" for="meme2">Click me!</label>
+            <span class="toggle-button">+</span>
+        </div>
+        <div class="meme-containter">
+            <input class="memo-button" type="checkbox" id="meme3" />
+            <label class="btn" for="meme3">Click me!</label>
+        </div>
+        <div class="meme-containter">
+            <input class="memo-button" type="checkbox" id="meme4" />
+            <label class="btn" for="meme4">Click me!</label>
+        </div>
+        <div class="meme-containter">
+            <input class="memo-button" type="checkbox" id="meme5" />
+            <label class="btn" for="meme5">Click me!</label>
+        </div>
+    </div>
+
+</body>
+
+</html>
