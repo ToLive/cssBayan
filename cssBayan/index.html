@@ -2,13 +2,9 @@
 <html>
 
 <head>
-    <title>Page Title</title>
+    <title>CSS Bayan</title>
 </head>
 <style>
-    .memo-button {
-        display: none;
-    }
-
     .container {
         max-width: 80vw;
         display: flex;
@@ -16,76 +12,119 @@
         align-items: center;
     }
 
-    .meme-containter {
+    .meme-panel {
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .meme-label {
+        display: flex;
+        align-items: center;
         justify-content: space-between;
         width: 100%;
         border-bottom: 0.2em solid;
     }
 
-    .btn {
-        height: 2em;
-        display: block;
-        text-align: left;
-        font-size: 2em;
-        line-height: 2em;
-    }
-
-    .btn:hover {
-        cursor: pointer;
-    }
-
-    .btn:active {
-        /*margin-left: 1px 1px 0;*/
-    }
-
-    .memo-button:checked+label {
-        height: 10em;
-    }
-
     .toggle-button {
-        justify-content: center;
         display: flex;
-        font-size: 3.5em;
-        width: 1em;
-        height: 1em;
+        justify-content: center;
+        font-size: 2em;
+        width: 1.2em;
+        height: 1.2em;
         transition: transform 0.1s linear;
-        /*transform-origin: 100% 0%;*/
     }
 
-    .memo-button:checked~.toggle-button {
+    input[type='radio'] {
+        display: none;
+    }
+
+    .wrap-collabsible {
+        margin: 1.2rem 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /*Main meme toggle*/
+    .lbl-toggle {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-family: sans-serif;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        text-align: start;
+        padding: 0.5rem;
+        color: #000;
+        background: #FFF;
+        cursor: pointer;
+        transition: all 0.25s ease-out;
+    }
+
+    /*Show collapsed content on hover on label and meme image*/
+    .lbl-toggle:hover>.collapsible-content {
+        max-height: 40em;
+    }
+
+    .collapsible-content:hover {
+        max-height: 40em;
+    }
+
+    /*Collapsed content with meme image*/
+    .collapsible-content {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height .25s ease-in-out;
+    }
+
+    /*Activate meme on click (hide others as it is radio button group)*/
+    .toggle:checked+.lbl-toggle>.collapsible-content {
+        max-height: 40em;
+    }
+
+    /*Rotate + at the right side of the label container*/
+    .toggle:checked+.lbl-toggle>.meme-label>.toggle-button {
         transform: rotate(45deg);
+    }
+
+    .collapsible-content .content-inner {
+        padding: 1rem 1rem;
     }
 </style>
 
 <body>
-
     <h1>CSS Bayan</h1>
     <div class="container">
-        <div class="meme-containter">
-            <input class="memo-button" type="checkbox" id="meme1" />
-            <label class="btn" for="meme1">Click me</label>
-            <span class="toggle-button">+</span>
+        <div class="wrap-collabsible">
+            <input id="collapsible" class="toggle" name="meme-group" type="radio" checked>
+            <label for="collapsible" class="lbl-toggle meme-panel">
+                <div class="meme-label">
+                    <span>Тут текст мема</span>
+                    <span class="toggle-button">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <img class="meme-img" src="images/cat1.png" alt="sleeping cat meme" />
+                    </div>
+                </div>
+            </label>
         </div>
-        <div class="meme-containter">
-            <input class="memo-button" type="checkbox" id="meme2" />
-            <label class="btn" for="meme2">Click me!</label>
-            <span class="toggle-button">+</span>
-        </div>
-        <div class="meme-containter">
-            <input class="memo-button" type="checkbox" id="meme3" />
-            <label class="btn" for="meme3">Click me!</label>
-        </div>
-        <div class="meme-containter">
-            <input class="memo-button" type="checkbox" id="meme4" />
-            <label class="btn" for="meme4">Click me!</label>
-        </div>
-        <div class="meme-containter">
-            <input class="memo-button" type="checkbox" id="meme5" />
-            <label class="btn" for="meme5">Click me!</label>
+        <div class="wrap-collabsible">
+            <input id="collapsible2" class="toggle" name="meme-group" type="radio">
+            <label for="collapsible2" class="lbl-toggle meme-panel">
+                <div class="meme-label">
+                    <span>Тут текст мема</span>
+                    <span class="toggle-button">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <img class="meme-img" src="images/cat1.png" alt="sleeping cat meme" />
+                    </div>
+                </div>
+            </label>
         </div>
     </div>
-
 </body>
 
 </html>
