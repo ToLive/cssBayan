@@ -6,12 +6,84 @@
 </head>
 <style>
     .container {
-        max-width: 80vw;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin: auto;
+    }
+
+    .header {
+        align-self: start;
+    }
+
+    .meme-content .content-inner {
+        padding: 1rem 1rem;
+    }
+
+    .meme-img {
+        width: 25em;
+        height: 25em;
+    }
+
+    /*Small phone*/
+    @media (min-width: 320px) {
+        .container {
+            max-width: 95vw;
+        }
+
+        .meme-img {
+            width: 30em;
+            height: 30em;
+        }
+
+        .header {
+            font-size: 5em;
+        }
+
+        .meme-label {
+            font-size: 2em;
+        }
+    }
+
+    /*Tablet*/
+    @media (min-width: 1180px) {
+        .container {
+            max-width: 80vw;
+        }
+
+        .meme-img {
+            width: 23em;
+            height: 23em;
+        }
+
+        .header {
+            font-size: 2em;
+        }
+
+        .meme-label {
+            font-size: 1.1em;
+        }
+    }
+
+    /*Desktop*/
+    @media (min-width: 1920px) {
+        .container {
+            max-width: 70vw;
+        }
+
+        .meme-img {
+            width: 25em;
+            height: 25em;
+        }
+
+        .header {
+            font-size: 2em;
+        }
+
+        .meme-label {
+            font-size: 1em;
+        }
     }
 
     .meme-panel {
@@ -60,14 +132,13 @@
     }
 
     .wrap-collabsible {
-        margin: 1.2rem 0;
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 
     /*Main meme toggle*/
-    .lbl-toggle {
+    .meme-toggle {
         display: flex;
         align-items: center;
         font-weight: bold;
@@ -83,52 +154,43 @@
     }
 
     /*Show collapsed content on hover on label and meme image*/
-    .lbl-toggle:hover>.collapsible-content {
+    .meme-toggle:hover>.meme-content {
         max-height: 40em;
     }
 
-    .collapsible-content:hover {
+    .meme-content:hover {
         max-height: 40em;
     }
 
     /*Collapsed content with meme image*/
-    .collapsible-content {
+    .meme-content {
         max-height: 0;
         overflow: hidden;
         transition: max-height .4s ease-in-out;
     }
 
     /*Activate meme on click (hide others as it is radio button group)*/
-    .toggle:checked+.lbl-toggle>.collapsible-content {
+    .toggle:checked+.meme-toggle>.meme-content {
         max-height: 40em;
     }
 
     /*Rotate + at the right side of the label container*/
-    .toggle:checked+.lbl-toggle>.meme-label>.toggle-button {
+    .toggle:checked+.meme-toggle>.meme-label>.toggle-button {
         transform: rotate(45deg);
-    }
-
-    .collapsible-content .content-inner {
-        padding: 1rem 1rem;
-    }
-
-    .meme-img {
-        width: 25em;
-        height: 25em;
     }
 </style>
 
 <body>
-    <h1>CSS Bayan</h1>
     <div class="container">
+        <h1 class="header">CSS Bayan</h1>
         <div class="wrap-collabsible">
-            <input id="collapsible" class="toggle" name="meme-group" type="radio" checked>
-            <label for="collapsible" class="lbl-toggle meme-panel">
+            <input id="meme1" class="toggle" name="meme-group" type="radio" checked>
+            <label for="meme1" class="meme-toggle meme-panel">
                 <div class="meme-label">
                     <span>Me and my sleep cycle</span>
                     <span class="toggle-button">+</span>
                 </div>
-                <div class="collapsible-content">
+                <div class="meme-content">
                     <div class="content-inner">
                         <img class="meme-img" src="images/cat1.jpg" alt="sleeping cat meme" />
                     </div>
@@ -136,13 +198,13 @@
             </label>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible2" class="toggle" name="meme-group" type="radio">
-            <label for="collapsible2" class="lbl-toggle meme-panel">
+            <input id="meme2" class="toggle" name="meme-group" type="radio">
+            <label for="meme2" class="meme-toggle meme-panel">
                 <div class="meme-label">
                     <span>Batman in HD</span>
                     <span class="toggle-button">+</span>
                 </div>
-                <div class="collapsible-content">
+                <div class="meme-content">
                     <div class="content-inner">
                         <img class="meme-img" src="images/batman.jpg" alt="batman in fullhd meme" />
                     </div>
@@ -150,13 +212,13 @@
             </label>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible3" class="toggle" name="meme-group" type="radio">
-            <label for="collapsible3" class="lbl-toggle meme-panel">
+            <input id="meme3" class="toggle" name="meme-group" type="radio">
+            <label for="meme3" class="meme-toggle meme-panel">
                 <div class="meme-label">
                     <span>When you need some style</span>
                     <span class="toggle-button">+</span>
                 </div>
-                <div class="collapsible-content">
+                <div class="meme-content">
                     <div class="content-inner">
                         <img class="meme-img" src="images/dress.jpg" alt="good dress meme" />
                     </div>
@@ -164,13 +226,13 @@
             </label>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible4" class="toggle" name="meme-group" type="radio">
-            <label for="collapsible4" class="lbl-toggle meme-panel">
+            <input id="meme4" class="toggle" name="meme-group" type="radio">
+            <label for="meme4" class="meme-toggle meme-panel">
                 <div class="meme-label">
                     <span>Vacation? What Vacation?</span>
                     <span class="toggle-button">+</span>
                 </div>
-                <div class="collapsible-content">
+                <div class="meme-content">
                     <div class="content-inner">
                         <img class="meme-img" src="images/vacation.jpg" alt="vacation meme" />
                     </div>
@@ -178,13 +240,13 @@
             </label>
         </div>
         <div class="wrap-collabsible">
-            <input id="collapsible5" class="toggle" name="meme-group" type="radio">
-            <label for="collapsible5" class="lbl-toggle meme-panel">
+            <input id="meme5" class="toggle" name="meme-group" type="radio">
+            <label for="meme5" class="meme-toggle meme-panel">
                 <div class="meme-label">
                     <span>Friendly work environment</span>
                     <span class="toggle-button">+</span>
                 </div>
-                <div class="collapsible-content">
+                <div class="meme-content">
                     <div class="content-inner">
                         <img class="meme-img" src="images/work.jpg" alt="work environment meme" />
                     </div>
