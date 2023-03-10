@@ -32,9 +32,26 @@
         display: flex;
         justify-content: center;
         font-size: 2em;
+        opacity: 0;
         width: 1.2em;
         height: 1.2em;
         transition: transform 0.1s linear;
+    }
+
+    .container:hover * .toggle-button {
+        animation: fadeIn 0.3s;
+        animation-delay: 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
     input[type='radio'] {
@@ -92,6 +109,11 @@
 
     .collapsible-content .content-inner {
         padding: 1rem 1rem;
+    }
+
+    .meme-img {
+        width: 100%;
+        height: 100%;
     }
 </style>
 
