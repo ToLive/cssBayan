@@ -25,7 +25,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        border-bottom: 0.2em solid;
+        border-top: 0.2em solid;
     }
 
     .toggle-button {
@@ -38,6 +38,7 @@
         transition: transform 0.1s linear;
     }
 
+    /*Toggle button fade in-out*/
     .container:hover * .toggle-button {
         animation: fadeIn 0.3s;
         animation-delay: 0.3s;
@@ -92,9 +93,9 @@
 
     /*Collapsed content with meme image*/
     .collapsible-content {
-        max-height: 0px;
+        max-height: 0;
         overflow: hidden;
-        transition: max-height .25s ease-in-out;
+        transition: max-height .4s ease-in-out;
     }
 
     /*Activate meme on click (hide others as it is radio button group)*/
@@ -112,8 +113,8 @@
     }
 
     .meme-img {
-        width: 100%;
-        height: 100%;
+        width: 25em;
+        height: 25em;
     }
 </style>
 
@@ -143,7 +144,7 @@
                 </div>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                        <img class="meme-img" src="images/batman.jpg" alt="sleeping cat meme" />
+                        <img class="meme-img" src="images/batman.jpg" alt="batman in fullhd meme" />
                     </div>
                 </div>
             </label>
@@ -157,7 +158,7 @@
                 </div>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                        <img class="meme-img" src="images/dress.jpg" alt="sleeping cat meme" />
+                        <img class="meme-img" src="images/dress.jpg" alt="good dress meme" />
                     </div>
                 </div>
             </label>
@@ -171,7 +172,7 @@
                 </div>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                        <img class="meme-img" src="images/vacation.jpg" alt="sleeping cat meme" />
+                        <img class="meme-img" src="images/vacation.jpg" alt="vacation meme" />
                     </div>
                 </div>
             </label>
@@ -180,12 +181,12 @@
             <input id="collapsible5" class="toggle" name="meme-group" type="radio">
             <label for="collapsible5" class="lbl-toggle meme-panel">
                 <div class="meme-label">
-                    <span>Friendly work enviroment</span>
+                    <span>Friendly work environment</span>
                     <span class="toggle-button">+</span>
                 </div>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                        <img class="meme-img" src="images/work.jpg" alt="sleeping cat meme" />
+                        <img class="meme-img" src="images/work.jpg" alt="work environment meme" />
                     </div>
                 </div>
             </label>
