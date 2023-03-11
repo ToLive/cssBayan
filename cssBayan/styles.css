@@ -1,0 +1,200 @@
+html {
+    background-color: antiquewhite;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.header {
+    align-self: start;
+}
+
+.meme-content .content-inner {
+    padding: 1rem 1rem;
+}
+
+.meme-img {
+    width: 25em;
+    height: 25em;
+}
+
+.icon-toggle {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    opacity: 1;
+    width: 1.2em;
+    height: 1.2em;
+    transition: transform 0.1s linear;
+}
+
+.meme-text {
+    color: black;
+}
+
+.meme-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.meme-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 0.2em solid;
+}
+
+
+input[type='radio'] {
+    display: none;
+}
+
+.wrap-collabsible {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*Main meme toggle*/
+.meme-toggle {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: start;
+    padding: 0.5rem;
+    color: #000;
+    transition: all 0.25s ease-out;
+}
+
+/*Collapsed content with meme image*/
+.meme-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease-in-out;
+}
+
+/*Activate meme on click (hide others as it is radio button group)*/
+.toggle:checked+.meme-toggle>.meme-content {
+    max-height: 40em;
+}
+
+/*Rotate + at the right side of the label container*/
+.toggle:checked+.meme-toggle>.meme-label>.icon-toggle {
+    transform: rotate(45deg);
+}
+
+/*Small phone*/
+@media (min-width: 320px) {
+    .container {
+        max-width: 95vw;
+    }
+
+    .meme-img {
+        width: 30em;
+        height: 30em;
+    }
+
+    .header {
+        font-size: 5em;
+    }
+
+    .meme-label {
+        font-size: 2em;
+    }
+}
+
+/*Tablet*/
+@media (min-width: 1180px) {
+    .container {
+        max-width: 50vw;
+    }
+
+    .meme-img {
+        width: 23em;
+        height: 23em;
+    }
+
+    .header {
+        font-size: 2em;
+    }
+
+    .meme-label {
+        font-size: 1.1em;
+    }
+}
+
+/*Desktop*/
+@media (min-width: 1920px) {
+    .container {
+        max-width: 40vw;
+    }
+
+    .meme-img {
+        width: 25em;
+        height: 25em;
+    }
+
+    .header {
+        font-size: 2em;
+    }
+
+    .meme-label {
+        font-size: 1em;
+    }
+
+    .icon-toggle {
+        opacity: 0;
+    }
+
+    .meme-toggle {
+        cursor: pointer;
+    }
+
+    /*Show collapsed content on hover on label and meme image*/
+    .meme-toggle:hover>.meme-content {
+        max-height: 40em;
+    }
+
+    .meme-content:hover {
+        max-height: 40em;
+    }
+
+    /*Toggle button fade in-out*/
+    .container:hover * .icon-toggle {
+        animation: fadeIn 0.3s;
+        animation-delay: 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    .container:hover * .meme-text {
+        color: black;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .meme-text {
+        color: blue;
+    }
+
+    .toggle:checked+.meme-toggle>.meme-label>.meme-text {
+        color: black;
+    }
+}
