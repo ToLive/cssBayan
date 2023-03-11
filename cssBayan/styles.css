@@ -71,7 +71,6 @@ input[type='radio'] {
     font-size: 1.2rem;
     text-transform: uppercase;
     text-align: start;
-    padding: 0.5rem;
     color: #000;
     transition: all 0.25s ease-out;
 }
@@ -169,7 +168,7 @@ input[type='radio'] {
         max-height: 40em;
     }
 
-    /*Toggle button fade in-out*/
+    /*Meme toggle button fade in-out*/
     .container:hover * .icon-toggle {
         animation: fadeIn 0.3s;
         animation-delay: 0.3s;
