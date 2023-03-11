@@ -159,6 +159,16 @@ input[type='radio'] {
         cursor: pointer;
     }
 
+
+
+    .toggle:checked+.meme-toggle>.meme-label>.meme-text {
+        color: black;
+    }
+}
+
+/*Hover only for devices with hover support*/
+@media (hover: hover) {
+
     /*Show collapsed content on hover on label and meme image*/
     .meme-toggle:hover>.meme-content {
         max-height: 40em;
@@ -191,9 +201,5 @@ input[type='radio'] {
 
     .meme-text {
         color: blue;
-    }
-
-    .toggle:checked+.meme-toggle>.meme-label>.meme-text {
-        color: black;
     }
 }
