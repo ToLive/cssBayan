@@ -1,5 +1,5 @@
-<!DOCTYPE html lang="en">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <title>CSS Bayan</title>
@@ -24,6 +24,20 @@
     .meme-img {
         width: 25em;
         height: 25em;
+    }
+
+    .toggle-button {
+        display: flex;
+        justify-content: center;
+        font-size: 2em;
+        opacity: 1;
+        width: 1.2em;
+        height: 1.2em;
+        transition: transform 0.1s linear;
+    }
+
+    .meme-text {
+        color: black;
     }
 
     /*Small phone*/
@@ -84,6 +98,39 @@
         .meme-label {
             font-size: 1em;
         }
+
+        .toggle-button {
+            opacity: 0;
+        }
+
+        /*Toggle button fade in-out*/
+        .container:hover * .toggle-button {
+            animation: fadeIn 0.3s;
+            animation-delay: 0.3s;
+            animation-fill-mode: forwards;
+        }
+
+        .container:hover * .meme-text {
+            color: black;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .meme-text {
+            color: blue;
+        }
+
+        .toggle:checked+.meme-toggle>.meme-label>.meme-text {
+            color: black;
+        }
     }
 
     .meme-panel {
@@ -100,32 +147,6 @@
         border-top: 0.2em solid;
     }
 
-    .toggle-button {
-        display: flex;
-        justify-content: center;
-        font-size: 2em;
-        opacity: 0;
-        width: 1.2em;
-        height: 1.2em;
-        transition: transform 0.1s linear;
-    }
-
-    /*Toggle button fade in-out*/
-    .container:hover * .toggle-button {
-        animation: fadeIn 0.3s;
-        animation-delay: 0.3s;
-        animation-fill-mode: forwards;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
 
     input[type='radio'] {
         display: none;
@@ -187,7 +208,7 @@
             <input id="meme1" class="toggle" name="meme-group" type="radio" checked>
             <label for="meme1" class="meme-toggle meme-panel">
                 <div class="meme-label">
-                    <span>Me and my sleep cycle</span>
+                    <span class="meme-text">Me and my sleep cycle</span>
                     <span class="toggle-button">+</span>
                 </div>
                 <div class="meme-content">
@@ -201,7 +222,7 @@
             <input id="meme2" class="toggle" name="meme-group" type="radio">
             <label for="meme2" class="meme-toggle meme-panel">
                 <div class="meme-label">
-                    <span>Batman in HD</span>
+                    <span class="meme-text">Batman in HD</span>
                     <span class="toggle-button">+</span>
                 </div>
                 <div class="meme-content">
@@ -215,7 +236,7 @@
             <input id="meme3" class="toggle" name="meme-group" type="radio">
             <label for="meme3" class="meme-toggle meme-panel">
                 <div class="meme-label">
-                    <span>When you need some style</span>
+                    <span class="meme-text">When you need some style</span>
                     <span class="toggle-button">+</span>
                 </div>
                 <div class="meme-content">
@@ -229,7 +250,7 @@
             <input id="meme4" class="toggle" name="meme-group" type="radio">
             <label for="meme4" class="meme-toggle meme-panel">
                 <div class="meme-label">
-                    <span>Vacation? What Vacation?</span>
+                    <span class="meme-text">Vacation? What Vacation?</span>
                     <span class="toggle-button">+</span>
                 </div>
                 <div class="meme-content">
@@ -243,7 +264,7 @@
             <input id="meme5" class="toggle" name="meme-group" type="radio">
             <label for="meme5" class="meme-toggle meme-panel">
                 <div class="meme-label">
-                    <span>Friendly work environment</span>
+                    <span class="meme-text">Friendly work environment</span>
                     <span class="toggle-button">+</span>
                 </div>
                 <div class="meme-content">
