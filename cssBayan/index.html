@@ -5,6 +5,11 @@
     <title>CSS Bayan</title>
 </head>
 <style>
+    html {
+        background-color: antiquewhite;
+        font-family: sans-serif;
+    }
+
     .container {
         display: flex;
         flex-direction: column;
@@ -26,7 +31,7 @@
         height: 25em;
     }
 
-    .toggle-button {
+    .icon-toggle {
         display: flex;
         justify-content: center;
         font-size: 2em;
@@ -38,99 +43,6 @@
 
     .meme-text {
         color: black;
-    }
-
-    /*Small phone*/
-    @media (min-width: 320px) {
-        .container {
-            max-width: 95vw;
-        }
-
-        .meme-img {
-            width: 30em;
-            height: 30em;
-        }
-
-        .header {
-            font-size: 5em;
-        }
-
-        .meme-label {
-            font-size: 2em;
-        }
-    }
-
-    /*Tablet*/
-    @media (min-width: 1180px) {
-        .container {
-            max-width: 80vw;
-        }
-
-        .meme-img {
-            width: 23em;
-            height: 23em;
-        }
-
-        .header {
-            font-size: 2em;
-        }
-
-        .meme-label {
-            font-size: 1.1em;
-        }
-    }
-
-    /*Desktop*/
-    @media (min-width: 1920px) {
-        .container {
-            max-width: 70vw;
-        }
-
-        .meme-img {
-            width: 25em;
-            height: 25em;
-        }
-
-        .header {
-            font-size: 2em;
-        }
-
-        .meme-label {
-            font-size: 1em;
-        }
-
-        .toggle-button {
-            opacity: 0;
-        }
-
-        /*Toggle button fade in-out*/
-        .container:hover * .toggle-button {
-            animation: fadeIn 0.3s;
-            animation-delay: 0.3s;
-            animation-fill-mode: forwards;
-        }
-
-        .container:hover * .meme-text {
-            color: black;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .meme-text {
-            color: blue;
-        }
-
-        .toggle:checked+.meme-toggle>.meme-label>.meme-text {
-            color: black;
-        }
     }
 
     .meme-panel {
@@ -163,24 +75,12 @@
         display: flex;
         align-items: center;
         font-weight: bold;
-        font-family: sans-serif;
         font-size: 1.2rem;
         text-transform: uppercase;
         text-align: start;
         padding: 0.5rem;
         color: #000;
-        background: #FFF;
-        cursor: pointer;
         transition: all 0.25s ease-out;
-    }
-
-    /*Show collapsed content on hover on label and meme image*/
-    .meme-toggle:hover>.meme-content {
-        max-height: 40em;
-    }
-
-    .meme-content:hover {
-        max-height: 40em;
     }
 
     /*Collapsed content with meme image*/
@@ -196,8 +96,114 @@
     }
 
     /*Rotate + at the right side of the label container*/
-    .toggle:checked+.meme-toggle>.meme-label>.toggle-button {
+    .toggle:checked+.meme-toggle>.meme-label>.icon-toggle {
         transform: rotate(45deg);
+    }
+
+    /*Small phone*/
+    @media (min-width: 320px) {
+        .container {
+            max-width: 95vw;
+        }
+
+        .meme-img {
+            width: 30em;
+            height: 30em;
+        }
+
+        .header {
+            font-size: 5em;
+        }
+
+        .meme-label {
+            font-size: 2em;
+        }
+    }
+
+    /*Tablet*/
+    @media (min-width: 1180px) {
+        .container {
+            max-width: 50vw;
+        }
+
+        .meme-img {
+            width: 23em;
+            height: 23em;
+        }
+
+        .header {
+            font-size: 2em;
+        }
+
+        .meme-label {
+            font-size: 1.1em;
+        }
+    }
+
+    /*Desktop*/
+    @media (min-width: 1920px) {
+        .container {
+            max-width: 40vw;
+        }
+
+        .meme-img {
+            width: 25em;
+            height: 25em;
+        }
+
+        .header {
+            font-size: 2em;
+        }
+
+        .meme-label {
+            font-size: 1em;
+        }
+
+        .icon-toggle {
+            opacity: 0;
+        }
+
+        .meme-toggle {
+            cursor: pointer;
+        }
+
+        /*Show collapsed content on hover on label and meme image*/
+        .meme-toggle:hover>.meme-content {
+            max-height: 40em;
+        }
+
+        .meme-content:hover {
+            max-height: 40em;
+        }
+
+        /*Toggle button fade in-out*/
+        .container:hover * .icon-toggle {
+            animation: fadeIn 0.3s;
+            animation-delay: 0.3s;
+            animation-fill-mode: forwards;
+        }
+
+        .container:hover * .meme-text {
+            color: black;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .meme-text {
+            color: blue;
+        }
+
+        .toggle:checked+.meme-toggle>.meme-label>.meme-text {
+            color: black;
+        }
     }
 </style>
 
@@ -209,7 +215,7 @@
             <label for="meme1" class="meme-toggle meme-panel">
                 <div class="meme-label">
                     <span class="meme-text">Me and my sleep cycle</span>
-                    <span class="toggle-button">+</span>
+                    <span class="icon-toggle">+</span>
                 </div>
                 <div class="meme-content">
                     <div class="content-inner">
@@ -223,7 +229,7 @@
             <label for="meme2" class="meme-toggle meme-panel">
                 <div class="meme-label">
                     <span class="meme-text">Batman in HD</span>
-                    <span class="toggle-button">+</span>
+                    <span class="icon-toggle">+</span>
                 </div>
                 <div class="meme-content">
                     <div class="content-inner">
@@ -237,7 +243,7 @@
             <label for="meme3" class="meme-toggle meme-panel">
                 <div class="meme-label">
                     <span class="meme-text">When you need some style</span>
-                    <span class="toggle-button">+</span>
+                    <span class="icon-toggle">+</span>
                 </div>
                 <div class="meme-content">
                     <div class="content-inner">
@@ -251,7 +257,7 @@
             <label for="meme4" class="meme-toggle meme-panel">
                 <div class="meme-label">
                     <span class="meme-text">Vacation? What Vacation?</span>
-                    <span class="toggle-button">+</span>
+                    <span class="icon-toggle">+</span>
                 </div>
                 <div class="meme-content">
                     <div class="content-inner">
@@ -265,7 +271,7 @@
             <label for="meme5" class="meme-toggle meme-panel">
                 <div class="meme-label">
                     <span class="meme-text">Friendly work environment</span>
-                    <span class="toggle-button">+</span>
+                    <span class="icon-toggle">+</span>
                 </div>
                 <div class="meme-content">
                     <div class="content-inner">
